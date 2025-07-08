@@ -6,8 +6,8 @@ import './App.css'
 export default function App() {
   return (
     <div className="text-center mt-10">
-      <h1 className="text-4xl font-bold text-yellow-200">Tailwind is working! 🎉</h1>
-      <p className="mt-4 text-lg text-gray-600">Welcome to your Stopwatch App</p>
+      <h1 className="text-4xl font-bold text-yellow-200">Hi how r u 🎉</h1>
+      <p className="mt-4 text-lg text-gray-600">ily</p>
     </div>
   );
 }
