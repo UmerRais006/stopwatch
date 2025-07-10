@@ -1,14 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Timer from "./pages/timer";
+import Clock from "./pages/clock";
+import Alarm from "./pages/alarm";
+import StopWatch from "./pages/stopwatch";
+import Layout from "./components/Layout";
+import "./App.css";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { path: "Timer", element: <Timer /> },
+      { path: "Clock", element: <Clock /> },
+      { path: "Alarm", element: <Alarm /> },
+      { path: "Stopwatch", element: <StopWatch /> },
+    ],
+  },
+]);
 
 export default function App() {
-  return (
-    <div className="text-center mt-10">
-      <h1 className="text-4xl font-bold text-yellow-200">Hi how r u 🎉</h1>
-      <p className="mt-4 text-lg text-gray-600">ily</p>
-    </div>
-  );
-}
 
+
+
+  
+  return <RouterProvider router={router} />;
+}
