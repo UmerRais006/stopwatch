@@ -5,7 +5,7 @@ import Header from "./header";
 const Navbar = () => {
   return (
     <div>
-    <nav className="border-black mt-[-10.4rem] border-2 px-6 py-4 shadow-md  width-screen rounded-xl border border-black ">
+    <nav className="border-black border-2 px-6 py-4 shadow-md mt-[3.3rem] width-screen rounded-xl border border-black ">
       <ul className="flex space-x-8 justify-center items-center">
         <li>
           <Link 
