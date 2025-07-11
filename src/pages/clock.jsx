@@ -6,18 +6,19 @@ const Clock = () => {
 
   useEffect(() => {
     const timerId = setInterval(() => {
-      const now = new Date();
-      setCurrentTime(now.toLocaleTimeString());
-      setCurrentDate(now.toLocaleDateString());
+      setCurrentTime(new Date().toLocaleTimeString());
+      setCurrentDate(new Date().toLocaleDateString());
     }, 1000);
 
     return () => clearInterval(timerId);
-  },[]);
+  }, []);
 
   return (
-    <div className="text-center mt-20 sm:mt-40">
-      <h1 className="text-2xl font-bold sm:text-4xl md:text-6xl">{currentTime}</h1>
-      <p className="text-sm sm:text-base md:text-xl mt-2">{currentDate}</p>
+    <div className="flex justify-center mt-20 sm:mt-40">
+      <div className="w-fit text-center shadow-xl p-4 rounded-full">
+        <h1 className="text-2xl font-bold sm:text-4xl md:text-6xl">{currentTime}</h1>
+        <p className="text-sm sm:text-base md:text-xl mt-2">{currentDate}</p>
+      </div>
     </div>
   );
 };
