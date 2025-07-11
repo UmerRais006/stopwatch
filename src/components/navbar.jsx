@@ -5,8 +5,8 @@ import Header from "./header";
 const Navbar = () => {
   return (
     <div>
-    <nav className="border-black border-2 px-6 py-4 shadow-md mt-[3.3rem] width-screen rounded-xl border border-black ">
-      <ul className="flex space-x-8 justify-center items-center">
+    <nav className="shadow-2xl w-fit py-4 text-xs mt-[3.3rem] sm:mt-[4.3rem] ">
+      <ul className="flex flex-col  text-left space-y-4  font-bold font-poppins  sm:flex-row sm:space-x-8 sm:justify-center sm:w-screen sm:space-y-0 md:text-sm ">
         <li>
           <Link 
             to="/Clock" 
