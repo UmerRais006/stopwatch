@@ -1,10 +1,10 @@
 // src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import Clock from "./pages/clock";
-import Timer from "./pages/timer";
-import Alarm from "./pages/alarm";
-import StopWatch from "./pages/stopwatch";
+import Clock from "./pages/Clock";
+import Timer from "./pages/Timer";
+import Alarm from "./pages/Alarm";
+import StopWatch from "./pages/Stopwatch";
 
 function App() {
   return (
