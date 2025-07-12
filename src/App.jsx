@@ -1,14 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Clock from "./pages/Clock";
+import Timer from "./pages/Timer";
+import Alarm from "./pages/Alarm";
+import StopWatch from "./pages/Stopwatch";
 
-export default function App() {
+function App() {
   return (
-    <div className="text-center mt-10">
-      <h1 className="text-4xl font-bold text-yellow-200">Tailwind is working! 🎉</h1>
-      <p className="mt-4 text-lg text-gray-600">Welcome to your Stopwatch App</p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Clock />} /> 
+          <Route path="timer" element={<Timer />} />
+          <Route path="clock" element={<Clock />} />
+          <Route path="alarm" element={<Alarm />} />
+          <Route path="stopwatch" element={<StopWatch />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
+export default App;
