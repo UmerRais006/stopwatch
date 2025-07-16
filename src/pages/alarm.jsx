@@ -6,11 +6,13 @@ const Alarm = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [alarmTime, setAlarmTime] = useState(null);
 
+  
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
-    return () => clearInterval(timer); 
+    return () => clearInterval(timer);
   }, []);
 
   useEffect(() => {
@@ -23,7 +25,7 @@ const Alarm = () => {
         currentTime.getMinutes() === alarmMinute &&
         currentTime.getSeconds() === 0
       ) {
-        toast.success("Wake Up , Alarm Ringing", {
+        toast.success("Wake Up, Alarm Ringing!", {
           position: "top-center",
         });
         setAlarmTime(null);
@@ -43,6 +45,12 @@ const Alarm = () => {
     return hrs + ":" + mins + ":" + secs;
   };
 
+  const handleAlarmChange = (e) => {
+    const value = e.target.value;
+    setAlarmTime(value);
+    localStorage.setItem("alarmTime", value); 
+  };
+
   return (
     <div className="text-center mt-20">
       <h2 className="text-3xl font-bold mb-4">Alarm Clock</h2>
@@ -50,15 +58,15 @@ const Alarm = () => {
 
       <input
         type="time"
-        onChange={(e) => setAlarmTime(e.target.value)}
+        onChange={handleAlarmChange}
+        value={alarmTime || ""}
         className="border border-black px-4 py-2 rounded"
       />
 
       {alarmTime && (
-       <p className="bg-black mt-2 text-[rgb(201,94,86)] font-bold text-center rounded-full px-10 py-4 mx-auto w-fit">
-  Alarm set for: {alarmTime}
-</p>
-
+        <p className="bg-black mt-2 text-white font-bold text-center rounded-full px-10 py-4 mx-auto w-fit">
+          Alarm set for: {alarmTime}
+        </p>
       )}
 
       <ToastContainer />
