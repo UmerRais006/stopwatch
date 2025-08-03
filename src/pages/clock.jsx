@@ -8,7 +8,7 @@ const Clock = () => {
     const timerId = setInterval(() => {
       setCurrentTime(new Date().toLocaleTimeString());
       setCurrentDate(new Date().toLocaleDateString());
-    }, 1000);
+    }, 500);
 
     return () => clearInterval(timerId);
   }, []);
